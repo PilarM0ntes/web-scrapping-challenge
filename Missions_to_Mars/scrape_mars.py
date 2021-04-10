@@ -42,7 +42,7 @@ def scrape():
                 "EARTH": values[1].text.strip()
             }
         mars_df = mars_df.append(thisdict, ignore_index = True)
-    mars_html_table = mars_df.to_html(classes='table table-striped').replace('\n', '')
+    mars_html_table = mars_df.to_html(classes='table table-striped', header = True, index=False)
     
     #Step1-Part4: Mars Hemispheres
     url = "https://marshemispheres.com/"

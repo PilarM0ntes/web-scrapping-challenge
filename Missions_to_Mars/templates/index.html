@@ -36,7 +36,8 @@
             </div>
             <div class="col-lg-4">
                 <h2>Mars Facts</h2>
-                {{data.mars_facts}}
+                {{data.mars_facts|safe}}
+
             </div>
 
         </div>
@@ -44,8 +45,16 @@
             <div class="col-lg-12 text-center">
                 <h2>Mars Hemispheres</h2>
                 <hr size =8 color="gray">
-
             </div>
+        </div>
+        <div class="row">
+            {% for x in data.mars_hemispheres %}
+                <div class="col-lg-3">
+                    <img width = 250px src="{{x.img_url}}" class="img-fluid img-thumbnail" alt="{{x.title}}">
+                    <h4>{{x.title}}</h4>
+                </div>
+
+            {% endfor %}
 
         </div>
 
